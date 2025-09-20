@@ -1,0 +1,186 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1DB954, #191414);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.spotify-player {
+  background: #282828;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  margin-bottom: 5px;
+  color: #1DB954;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.album-cover img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  animation: spin 15s linear infinite;
+}
+
+.song-info h3 {
+  margin: 5px 0;
+  font-size: 1.3rem;
+}
+
+.song-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+#progress {
+  flex: 1;
+}
+
+.controls button {
+  background: #1DB954;
+  border: none;
+  padding: 12px;
+  margin: 0 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #1ed760;
+}
+
+.back-btn {
+  margin-top: 20px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  background: #1DB954;
+  padding: 10px 18px;
+  border-radius: 12px;
+  color: white;
+  transition: 0.3s;
+}
+
+.back-btn a:hover {
+  background: #1ed760;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(0deg); }
+}
+.album-cover img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  transition: transform 0.5s ease-in-out;
+}
+
+.rotate {
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* animasi teks judul */
+#song-title {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: slideText 10s linear infinite;
+}
+
+@keyframes slideText {
+  0% { transform: translateX(70%); }
+  100% { transform: translateX(-70%); }
+}
+
+/* efek love beat */
+.love-beat {
+  animation: beat 0.4s ease-in-out;
+}
+
+@keyframes beat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+.volume-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0 20px 0;
+  color: #1DB954;
+}
+
+#volume {
+  width: 150px;
+  accent-color: #1DB954;
+  cursor: pointer;
+}
+/* Container judul biar efek marquee smooth */
+.title-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 30px; /* tinggi teks */
+}
+
+#song-title {
+  position: absolute;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+}
+
+/* Efek marquee: hilang di kiri, muncul lagi dari kanan */
+@keyframes marquee {
+  0%   { left: 100%; }
+  50%  { left: -100%; opacity: 1; }
+  51%  { opacity: 0; }   /* pas ilang */
+  60%  { left: 100%; opacity: 0; } 
+  61%  { opacity: 1; }   /* muncul lagi */
+  100% { left: 0%; }
+}
